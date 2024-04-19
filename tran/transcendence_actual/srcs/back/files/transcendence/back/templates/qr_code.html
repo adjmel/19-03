@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Google Authenticator QR Code</h2>
+  <p>Scan the QR code below with Google Authenticator app:</p>
+
+  <img src="data:image/png;base64,{{ qr_code_img }}" alt="QR Code">
+{% endblock %}

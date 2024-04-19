@@ -1,0 +1,21 @@
+Vous trouverez ci-dessous une liste de toutes les opérations dont vous aurez
+besoin pour utiliser efficacement git et branches.
+
+1- git branch <nom de la branche>
+Créez une branche.
+
+2- git switch <nom de la branche>
+Remplacez vos fichiers vers ceux de la branche.
+!------------!
+Assurez-vous de valider toutes les modifications avant de changer.
+!------------!
+
+3- git branch
+Voir une liste de toutes les succursales locales.
+Appuyez sur q pour quitter la vue.
+
+4- git branch -D <nom de la branche>
+Supprimer une branche.
+!------------!
+Toutes les modifications sur cette branche seraient perdues.
+!------------!

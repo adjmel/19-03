@@ -1,0 +1,46 @@
+version: '3.9'
+
+services:
+#  front:
+#    container_name: front
+#    depends_on:
+#      - back
+#    networks:
+#      - transcendence
+#    env_file: .env
+#    build: front
+#    restart: on-failure
+#    ports:
+#      - "8080:8080"
+
+  back:
+    container_name: back
+    depends_on:
+      - postgres
+    networks:
+      - transcendence
+    env_file: .env
+    build: back
+    volumes:
+      - ./back/files/transcendence:/transcendence
+    ports:
+      - "8000:8000"
+    restart: on-failure
+  
+  postgres:
+    image: postgres:16.2
+    container_name: postgres
+    networks:
+      - transcendence
+    env_file: .env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+volumes:
+  postgres:
+
+networks:
+  transcendence:

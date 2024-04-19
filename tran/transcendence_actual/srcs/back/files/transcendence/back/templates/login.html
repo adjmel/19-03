@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+<!-- Extension du modèle de base (base.html) -->
+
+{% block title %}Login{% endblock %}
+<!-- Définition du titre de la page -->
+
+{% block content %}
+<!-- Début du bloc de contenu -->
+
+  <h2>Login</h2>
+  <!-- Titre de la section de connexion -->
+
+  <form method="post">
+  <!-- Début du formulaire avec la méthode POST -->
+
+    {% csrf_token %}
+    <!-- Ajout du jeton CSRF pour protéger le formulaire contre les attaques CSRF -->
+
+    {{ form.as_p }}
+    <!-- Affichage du formulaire de connexion avec le format paragraphe (as_p) -->
+
+    <button type="submit">Login</button>
+    <!-- Bouton pour soumettre le formulaire de connexion -->
+
+  </form>
+  <!-- Fin du formulaire -->
+
+  <p>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+  <!-- Lien pour rediriger vers la page d'inscription (signup) -->
+
+{% endblock %}
+<!-- Fin du bloc de contenu -->

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>World of Pong</title>
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" onclick="event.preventDefault();">World of Pong</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-flex" id="navbarNavDropdown">
+                    <ul class="navbar-nav flex-fill d-flex justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" onclick="event.preventDefault();">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="match_link" href="#" onclick="event.preventDefault();">Match</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="ai_link" href="#" onclick="event.preventDefault();">AI Match</a>
+                        </li>
+                        <li class="nav-item me-auto">
+                            <a class="nav-link" id="tournament_link" href="#" onclick="event.preventDefault();">Tournament</a>
+                        </li>
+                        <!-- Avatar -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
+                            role="button" aria-expanded="false">
+                                <img src="" class="rounded-circle"
+                                    height="22" alt="Avatar" loading="lazy" />
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#" onclick="event.preventDefault();">My profile</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="event.preventDefault();">Settings</a></li>
+                                <li><a class="dropdown-item" href="{% url 'logout' %}" id="logout-link">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Contents loaded from server is inserted here by javascript -->
+        <div id="content">
+            <div class="text-center">
+                <h1 >Welcome to the world of Pong</h1>
+                <hr>
+                <div class="row">
+                    <div class='col-sm-4'></div>
+                    <div class='col-sm-4'>
+                        <p class="fs-4">Here you can play pong against a reasonable AI, 
+                            play against a friend, or challenge a bunch of your friends to determine who is the best pong player in an epic tournament.</p>    
+                    </div>
+                </div>
+                <div>
+                    {% load static %}
+                    <img src="{% static 'pong.gif' %}" class="rounded mx-auto d-block">
+                </div>
+            </div>
+        </div>
+    
+    </body>
+    {% load static %}
+    <script id="script_js" src="{% static 'index.js' %}" defer></script>
+</html>

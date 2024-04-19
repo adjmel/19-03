@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Login Successful</h2>
+  <p>Scan the QR code below to complete the login process:</p>
+
+  <img src="{{ qr_code_url }}" alt="QR Code">
+{% endblock %}
